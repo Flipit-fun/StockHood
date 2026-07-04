@@ -209,15 +209,6 @@ function StokehoodContent() {
 
   return (
     <>
-      {/* LOADER */}
-      <div id="loader" className={loaderHidden ? "hide" : ""}>
-        <Image src="/logo.png" alt="Stokehood" width={160} height={48} style={{ objectFit: "contain" }} />
-        <div className="loader-bar"></div>
-        <div className="loader-pct" style={{ fontFamily: "var(--font-space-mono)" }}>
-          LOADING MARKET DATA
-        </div>
-      </div>
-
       {/* NAV */}
       <nav>
         <Image src="/logo.png" alt="Stokehood" width={140} height={40} style={{ objectFit: "contain" }} />

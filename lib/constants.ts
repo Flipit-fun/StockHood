@@ -10,12 +10,6 @@ export interface Stock {
 export const stocks: Stock[] = [
   { sym: "TSLA", name: "Tesla", price: 214.65, chg: -2.15, available: true },
   { sym: "AMD", name: "AMD", price: 118.6, chg: 0.34, available: true },
-  { sym: "AAPL", name: "Apple", price: 214.32, chg: 1.24, available: false },
-  { sym: "MSFT", name: "Microsoft", price: 441.58, chg: 0.62, available: false },
-  { sym: "NVDA", name: "Nvidia", price: 135.92, chg: 3.41, available: false },
-  { sym: "AMZN", name: "Amazon", price: 198.76, chg: -0.83, available: false },
-  { sym: "GOOGL", name: "Alphabet", price: 176.44, chg: 1.05, available: false },
-  { sym: "META", name: "Meta Platforms", price: 512.3, chg: -1.42, available: false },
 ];
 
 // USDG stablecoin — also available for swap
