@@ -334,9 +334,8 @@ function StokehoodContent() {
             const up = s.chg >= 0;
             const paths = sparkPath(s.sym, up);
             const color = up ? "var(--lime)" : "var(--loss)";
-            const isAvailable = s.available;
             return (
-              <Link href={`/stock/${s.sym}`} key={s.sym} style={{ textDecoration: "none", color: "inherit", opacity: isAvailable ? 1 : 0.5 }}>
+              <Link href={`/stock/${s.sym}`} key={s.sym} style={{ textDecoration: "none", color: "inherit" }}>
                 <div className="stock-card">
                   <div className="stock-top">
                     <div>
@@ -348,29 +347,13 @@ function StokehoodContent() {
                       </div>
                       <div className="stock-name">{s.name}</div>
                     </div>
-                    {isAvailable ? (
-                      <div
-                        className={`stock-chg ${up ? "up" : "down"}`}
-                        style={{ fontFamily: "var(--font-space-mono)" }}
-                      >
-                        {up ? "+" : ""}
-                        {s.chg.toFixed(2)}%
-                      </div>
-                    ) : (
-                      <div
-                        style={{
-                          fontFamily: "var(--font-space-mono)",
-                          fontSize: "0.7rem",
-                          padding: "5px 10px",
-                          borderRadius: 8,
-                          background: "rgba(255,255,255,0.04)",
-                          border: "1px solid var(--muted)",
-                          color: "var(--muted)",
-                        }}
-                      >
-                        COMING SOON
-                      </div>
-                    )}
+                    <div
+                      className={`stock-chg ${up ? "up" : "down"}`}
+                      style={{ fontFamily: "var(--font-space-mono)" }}
+                    >
+                      {up ? "+" : ""}
+                      {s.chg.toFixed(2)}%
+                    </div>
                   </div>
                   <svg
                     className="spark"
@@ -392,30 +375,18 @@ function StokehoodContent() {
                     >
                       ${s.price.toFixed(2)}
                     </div>
-                    {isAvailable ? (
-                      <button
-                        className="stock-buy"
-                        style={{ fontFamily: "var(--font-space-mono)" }}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          document
-                            .getElementById("buy")
-                            ?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                      >
-                        Buy
-                      </button>
-                    ) : (
-                      <span
-                        style={{
-                          fontFamily: "var(--font-space-mono)",
-                          fontSize: "0.72rem",
-                          color: "var(--muted)",
-                        }}
-                      >
-                        Sold Out
-                      </span>
-                    )}
+                    <button
+                      className="stock-buy"
+                      style={{ fontFamily: "var(--font-space-mono)" }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById("buy")
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      Buy
+                    </button>
                   </div>
                 </div>
               </Link>
